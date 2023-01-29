@@ -3,3 +3,4 @@ This is my personal website. I write articles about topics I find interesting. M
 
 I originally forked this site from https://github.com/pure-css/pure and have made my own edits over time.
 
+You can view my site at https://harryrobson.com/.
