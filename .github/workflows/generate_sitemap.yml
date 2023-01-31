@@ -1,0 +1,12 @@
+on: push
+name: Generate Sitemap
+jobs:
+  generateSitemap:
+    name: generate sitemap
+    runs-on: ubuntu-latest
+    steps:
+    - name: Label when approved
+      uses: cicirello/generate-sitemap@v1
+      with: 
+        fetch-depth: 0 
+        
