@@ -1,0 +1,7 @@
+name: GitHub Actions Demo
+run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
+on: [push]
+jobs:
+  steps:
+  - name: generate-sitemap
+    uses: cicirello/generate-sitemap@v1.9.1
