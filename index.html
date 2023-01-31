@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="styles/grids-responsive-min.css">
     <link rel="stylesheet" href="styles/main.css">
     <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/Harry-Robson/harryrobson.com/main/icons/favicon.ico">
-    <link rel="canonical" href="#"/>
+    <link rel="canonical" href="https://harryrobson.com"/>
 </head>
 <body>
 
@@ -58,6 +58,8 @@
                             I'm Harry Robson, I created this site in an effort to improve my online searchability. Why? Because before I started building this site, you would have to scroll to page 11 of Google to find anything actually about me! You can verify the success of my efforts by checking where I rank today.
                             <br><br>
                             Currently working as a network engineer, based in Newcastle Upon Tyne. <b>You can contact me via LinkedIn or Twitter.</b>
+                            <br><br>
+                            <b>I'm still building this site!</b>
                         </p>
                     </div>
                 </section>
@@ -78,38 +80,18 @@
 
                     <div class="post-description">
                         <p>
-                            When I first started learning Python, I was surprised to learn how easy it was to execute system commands from within my own Python program. It massively expanded my creative horizons, and that's why it's the first Python related post I will be making here. To follow along, you'll need to ensure that you have Python installed on your machine. 
+                            When I first started learning to code with Python, there were two major discoveries that immediately increased my horizons as an amateur programmer. These discoveries were: integrating third-party APIs and using the subprocess module. Both topics hold a similarity, in that they allow you to interact with pre-built systems.
                             <br><br>
-                            I'll be using the 'ping' command for an example. In case you are not familiar, the ping command is used to send an ICMP echo request to another node within a computer network. If the recipient node is live and accepting ping packets, it will reply with an ICMP echo reply. This is a handy command line utility if you want to check the reachability of specific nodes within a network. Run this example in your command prompt:
-                            <br><br>
-                            <code>ping 127.0.0.1</code>
-                            <br><br>
-                            You will get an output that looks something like this:
-                            <br><br>
-                            <code>Reply from 127.0.0.1: bytes=32 time&lt;1ms TTL=128</code>
-                            <br><br>
-                            What this means is that the 127.0.0.1 (your loopback address) replied to your echo request and the reply packet was received within less than a millisecond. TTL is about how many more 'hops' the packet can do before it is dropped, but I'll not cover that topic right now. Now, let's automate it: 
-                            <br><br>
-                            <code>
-                                import subprocess
-                                <br>
-                                command = ["ping", "127.0.0.1", "-n", "3"]
-                                <br>
-                                execute_command = subprocess.run(command)
-                            </code>
-                            <br><br>
-                            Above is code that will allow you to execute a command. Note how every argument in the <code>command</code> array is a separate string. You may also notice that I have added <code>-n 3</code> to the end of the ping command. This means that 3 packets will be sent.
-                            <br><br>
-                            Now, you can run your program and it works! You should see a shell window appear (on Windows) and your command will be executed in front of your eyes. You're an automation genius!
+                            This post is aimed at beginners and will show you how to use the Python subprocess module to execute system commands from within your programs.
+                            <a href="#">[Continue Reading]</a>
                         </p><!--MAKE IT SO THAT THE POSTS ARE ON SEPARATE PAGES. JUST ADD "KEEP READING..." AS A BOLD HREF-->
                     </div>
                 </section>
 
-                <!--POST 1-->
                 <section class="post">
                     <header class="post-header">
 
-                        <h2 class="post-title">Why You Need a Personal Website</h2>
+                        <h2 class="post-title">Do you need a personal website?</h2>
 
                         <p class="post-meta">
                             By <a class="post-author" href="#">Harry Robson</a> Posted Jan 18, 2023
@@ -118,17 +100,10 @@
 
                     <div class="post-description">
                         <p>
-                            It makes sense that my first post addresses the creation of my own personal website. My intention is to become the number 1 indexed page on Google for the term "Harry Robson". My reason for wanting to do this? One of the first things prospective employers, customers etc. will do is Google your name. What shows up? Without a personal website, you have little, to no, control over this.
+                            Having your own personal website is a great way to take control of your digital identity. I decided that I needed to create my own personal website after finding that a search for my own name yields no results that can even be associated with me, without scrolling to page 11 of Google!
                             <br><br>
-                            My current situation (and most likely yours too) is that someone else will come up. You may not be listed at all! Whether it is right or not, my worry is that this leads to a certain level of disregard. In contrary, if a prospective customer was to search your name and you were the number one result, I would argue that the customer is going to trust you more - without ever having met you.
-                            <br><br>
-                            So how does it all work? Once you have created your website you aren't automatically gifted the number 1 ranking on Google, Bing or DuckDuckGo! Not at all (unless you have a very unique name). More likely, you will be placed at the bottom of page 11, 12 or 45 for your own name! This is where SEO (search engine optimisation) comes in to play. You've probably heard of SEO, but what does it actually involve?
-                            <br><br>
-                            The main fields within SEO are: backlinking (where other sites link to yours); keyword optimisation (in which the author will integrate industry-relevant words into their site); technical SEO (how fast the page loads, mobile compatibility etc.) and the final that I will mention is domain age (how long your domain has been active). There are more factors, but these will be the focus of my efforts. 
-                            <br><br>
-                            Are you convinced? Want to create your own personal website? It's really not hard! Depending on how 'technical' you are, choose to either create a site using a website builder (such as Wix or Squarespace) or search on GitHub for a simple CSS blog template and edit it manually. This is what I have done, mainly as it allows me to keep costs and website size to a minimum! If you're following my method then you can then host on AWS for a few pounds per month and connect a custom domain!
-                            <br><br>
-                            I'll be posting updates here detailling what worked/didn't once I'm more experienced with SEO, and hopefully hold the number 1 rank on Google for my name!
+                            This post covers my work-in-progress findings drawn from primary and secondary research regarding personal websites and all aspects of SEO.
+                            <a href="#">[Continue Reading]</a>
                         </p>
                     </div>
                 </section>
