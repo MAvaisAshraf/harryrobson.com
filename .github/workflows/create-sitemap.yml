@@ -1,3 +1,4 @@
-on: [push]
-  - name: generate-sitemap
-    uses: cicirello/generate-sitemap@v1.9.1
+ - name: Generate the sitemap
+      uses: cicirello/generate-sitemap@v1
+      with:
+        base-url-path: https://harryrobson.com/
