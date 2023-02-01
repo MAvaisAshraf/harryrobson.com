@@ -86,13 +86,13 @@
                             Messy. We could parse this output in multiple ways, but we don't really need to. If we receive an output containing "TTL" we already know that the ping was a success so we might as well use that as our 'acid test'.
                             <br><br>
                             <code>
-                                if "TTL" in str(process):
-                                <br>
-                                    print("8.8.8.8 is reachable")
-                                <br>
-                                else:
-                                <br>
-                                    print("8.8.8.8 is not reachable")</code>
+                            if "TTL" in str(process):
+                            <br>
+                                print("8.8.8.8 is reachable")
+                            <br>
+                            else:
+                            <br>
+                                print("8.8.8.8 is not reachable")</code>
                             <br>
                             <br>
                             Now, let's wrap it all up together and ping 8.8.8.8 every 10 seconds using a while loop and the time module:
