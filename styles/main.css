@@ -40,13 +40,11 @@ h3 {
 
 .brand-title,
 .brand-tagline {
-    a:link {
-        color: white;
-    }
     margin: 0;
 }
 .brand-title {
     text-transform: uppercase;
+    a:link {color: white;}
 }
 .brand-tagline {
     font-weight: 300;
