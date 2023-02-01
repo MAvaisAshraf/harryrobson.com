@@ -73,7 +73,7 @@
                             <br><br>
                             The above code snippet will run our pre-defined command and then print a returncode. A returncode of 0 means that the program executed succesfully. Any other result and we can assume that there was an issue while executing the command. A returncode of 0 <b>does not</b> mean that an echo reply was received, however.
                             <br><br>
-                            If we want to know what information the ping command returns then we will need to do some more work. For this case, this works well:
+                            If we want to know what information the ping command returns then we will need to do some more work. For this case, <code>check_output</code> works well:
                             <br><br>
                             <code>process = subprocess.check_output(command)
                             <br>
