@@ -56,6 +56,19 @@
                             <code>Reply from 8.8.8.8: bytes=32 time=20ms TTL=119</code>
                             <br><br>
                             This is telling us that we received an ICMP packet of 32 bytes; that it took 20ms for a round trip and that the 'time to live' is 119. Great, now we know that the server is reachable and responding to echo requests. But what if we don't want to sit here and manually ping the server every 5 mins? <b>We need to automate it.</b>
+                            <br><br>
+                            One of the ways that we can do this is using the Python subprocess module. We can start by importing this:
+                            <br><br>
+                            <code>import subprocess</code>
+                            <br><br>
+                            Now we want to create a variable to store our command:
+                            <br><br>
+                            <code>command = "ping 8.8.8.8 -n 1"</code>
+                            <br><br>
+                            Note that I have added '-n 1'. This means that instead of sending the default of 4 echo requests, we will only send 1. Now we use subprocess to run the command:
+                            <br><br>
+                            <code>subprocess.run(command, shell=False)</code>
+                            <br><br>
                         </p>
                     </div>
                 </section>
