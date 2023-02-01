@@ -40,11 +40,8 @@ h3 {
 }
 .brand-title {
     text-transform: uppercase;
-    a:link {color: rgb(255, 255, 255);
-    }
-    a:hover {color: rgb(255, 255, 255);
-    }
-    a:visited {color: rgb(255, 255, 255);
+    a{
+        color: white;
     }
 }
 }
