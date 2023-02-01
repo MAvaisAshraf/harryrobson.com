@@ -4,10 +4,6 @@
     box-sizing: border-box;
 }
 
-a {
-    text-decoration: none;
-    color: rgb(255, 255, 255);
-}
 a:hover,
 a:focus {
     text-decoration: underline;
@@ -44,6 +40,9 @@ h3 {
 }
 .brand-title {
     text-transform: uppercase;
+    a:link {color: rgb(255, 255, 255);
+    }
+}
 }
 .brand-tagline {
     font-weight: 300;
@@ -111,6 +110,11 @@ h3 {
     color: #999;
     font-size: 90%;
     margin: 0;
+    a:link {
+    text-decoration: none;
+    color: rgb(61, 146, 201);
+    }
+}
 }
 
 .post-images {
