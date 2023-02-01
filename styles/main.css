@@ -31,7 +31,9 @@ h3 {
     text-align: center;
     top: auto;
     margin: 3em auto;
-    a:link: rgb(255, 255, 255)
+    a:link{
+        color: white;
+    }
 }
 
 .sidebar {
