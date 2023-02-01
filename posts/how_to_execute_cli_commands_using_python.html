@@ -67,8 +67,17 @@
                             <br><br>
                             Note that I have added '-n 1'. This means that instead of sending the default of 4 echo requests, we will only send 1. Now we use subprocess to run the command:
                             <br><br>
-                            <code>subprocess.run(command, shell=False)</code>
+                            <code>process = subprocess.run(command)
+                            <br>
+                            print(process.returncode)</code>
                             <br><br>
+                            The above code snippet will run our pre-defined command and then print a returncode. A returncode of 0 means that the program executed succesfully. Any other result and we can assume that there was an issue while executing the command. A returncode of 0 <b>does not</b> mean that an echo reply was received, however.
+                            <br><br>
+                            If we want to know what information the ping command returns then we will need to do some more work. For this case, this works well:
+                            <br><br>
+                            <code>process = subprocess.check_output(command)
+                            <br>
+                            print(process)</code>  
                         </p>
                     </div>
                 </section>
