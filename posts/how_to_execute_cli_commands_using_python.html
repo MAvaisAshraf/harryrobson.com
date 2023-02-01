@@ -99,16 +99,23 @@
                             <br>
                             <code>
                             import time
+                            <br>
                             import subprocess
-
+                            <br><br>
                             command = "ping 8.8.8.8 -n 1"
-
+                            <br><br>
                             while True:
+                            <br>
                             time.sleep(10)
+                            <br><br>
                             process = subprocess.check_output(command)
+                            <br>
                             if "TTL" in str(process):
+                            <br>
                                 print("8.8.8.8 is reachable")
+                            <br>
                             else:
+                            <br>
                                 print("8.8.8.8 is not reachable")</code>
                         </p>
                     </div>
