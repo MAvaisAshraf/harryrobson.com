@@ -97,9 +97,19 @@
                             <br>
                             Now, let's wrap it all up together and ping 8.8.8.8 every 10 seconds using a while loop and the time module:
                             <br>
-                            <code>ENTER HERE </code>
-                        
-                       
+                            <code>
+                            import time
+                            import subprocess
+
+                            command = "ping 8.8.8.8 -n 1"
+
+                            while True:
+                            time.sleep(10)
+                            process = subprocess.check_output(command)
+                            if "TTL" in str(process):
+                                print("8.8.8.8 is reachable")
+                            else:
+                                print("8.8.8.8 is not reachable")</code>
                         </p>
                     </div>
                 </section>
