@@ -58,7 +58,9 @@ code {
     font-family: monospace, monospace;
     font-size: 1em;
     background-color: #565d64;
+    color:#b94a48;
 }
+
 kbd,
 samp {
     font-family: monospace, monospace;
