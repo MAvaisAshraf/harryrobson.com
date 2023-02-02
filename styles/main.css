@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+a {
+    text-decoration: none;
+    color: rgb(61, 146, 201);
+}
 a:hover,
 a:focus {
     text-decoration: underline;
@@ -32,9 +36,6 @@ h3 {
 .sidebar {
     background: rgb(61, 79, 93);
     color: #fff;
-    a:link {
-        color: white;
-    }
 }
 
 .brand-title,
@@ -43,7 +44,6 @@ h3 {
 }
 .brand-title {
     text-transform: uppercase;
-}
 }
 .brand-tagline {
     font-weight: 300;
@@ -111,10 +111,6 @@ h3 {
     color: #999;
     font-size: 90%;
     margin: 0;
-    a:link {
-    color: rgb(61, 146, 201);
-    }
-}
 }
 
 .post-images {
