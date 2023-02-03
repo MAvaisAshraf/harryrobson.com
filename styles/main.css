@@ -45,6 +45,12 @@ h3 {
 .brand-title {
     text-transform: uppercase;
 }
+.brand-title a{
+    color: inherit;
+}
+.brand-title a:hover{
+    color:rgb(61, 146, 201);
+}
 .brand-tagline {
     font-weight: 300;
     color: rgb(176, 202, 219);
@@ -155,4 +161,22 @@ h3 {
     .footer {
         text-align: center;
     }
+}
+
+.code-block {
+    background-color: #000;
+    width: 100% !important;
+    padding: 1rem 2rem;
+    border-radius: 5px;
+}
+.javascript {
+    color: #fff;
+    word-break: break-all;
+    white-space: break-spaces;
+}
+.code-block  pre{
+    margin: 0;
+}
+.python{
+    color: #fff;
 }

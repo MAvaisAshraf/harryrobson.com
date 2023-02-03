@@ -16,7 +16,7 @@
 <div id="layout" class="pure-g">
     <div class="sidebar pure-u-1 pure-u-md-1-4">
         <div class="header">
-            <h1 class="brand-title">Harry Robson</h1>
+            <h1 class="brand-title"><a href="/">Harry Robson</a></h1>
             <h2 class="brand-tagline">Personal Blog</h2>
 
             <nav class="nav">
@@ -49,74 +49,94 @@
                             <br><br>
                             Let's say for example, you want to be check if a remote server is reachable. To do this you would usually use the 'ping' command line utility. You can try this out for yourself by opening a command prompt and entering:
                             <br><br>
-                            <code>ping 8.8.8.8</code>.
+                            <div class="code-block">
+                                <code><pre class="javascript" style="font-family:monospace;">ping 8.8.8.8</pre></code>
+                            </div>
                             <br><br>
                             What's happening here? 8.8.8.8 is the IPv4 address for Google's DNS server. By pinging this address, we are checking if our device can reach 8.8.8.8 over the internet. If it is reachable, then you will have an output like this:
                             <br><br>
-                            <code>Reply from 8.8.8.8: bytes=32 time=20ms TTL=119</code>
+                            <div class="code-block">
+                                <code><pre class="javascript" style="font-family:monospace;">Reply from 8.8.8.8<span style="color: #339933;">:</span> bytes<span style="color: #339933;">=</span><span style="color: #CC0000;">32</span> time<span style="color: #339933;">=</span>20ms TTL<span style="color: #339933;">=</span><span style="color: #CC0000;">119</span></pre></code>
+                            </div>
                             <br><br>
                             This is telling us that we received an ICMP packet of 32 bytes; that it took 20ms for a round trip and that the 'time to live' is 119. Great, now we know that the server is reachable and responding to echo requests. But what if we don't want to sit here and manually ping the server every 5 mins? <b>We need to automate it.</b>
                             <br><br>
                             One of the ways that we can do this is using the Python subprocess module. We can start by importing this:
                             <br><br>
-                            <code>import subprocess</code>
+                            <div class="code-block">
+                                <code><pre class="javascript" style="font-family:monospace;"><span style="color: #FF0000;">import</span> subprocess</pre></code>
+                            </div>
                             <br><br>
                             Now we want to create a variable to store our command:
                             <br><br>
-                            <code>command = "ping 8.8.8.8 -n 1"</code>
+                            <div class="code-block">
+
+                                <code><pre class="javascript" style="font-family:monospace;"> command = "ping 8.8.8.8 -n 1"</pre></code>
+                            </div>
                             <br><br>
                             Note that I have added '-n 1'. This means that instead of sending the default of 4 echo requests, we will only send 1. Now we use subprocess to run the command:
                             <br><br>
-                            <code>process = subprocess.run(command)
-                            <br>
-                            print(process.returncode)</code>
+                            <div class="code-block">
+                                <code class="python" style="font-family:monospace;">
+                                    process <span style="color: #66cc66;">=</span> <span style="color: #dc143c;">subprocess</span>.<span style="color: black;">run</span><span style="color: black;">&#40;</span>command<span style="color: black;">&#41;</span>
+                                    <br><span style="color: #ff7700;font-weight:bold;">print</span><span style="color: black;">&#40;</span>process.<span style="color: black;">returncode</span><span style="color: black;">&#41;</span>
+                                </code>
+
+                            </div>
                             <br><br>
                             The above code snippet will run our pre-defined command and then print a returncode. A returncode of 0 means that the program executed succesfully. Any other result and we can assume that there was an issue while executing the command. A returncode of 0 <b>does not</b> mean that an echo reply was received, however.
                             <br><br>
                             If we want to know what information the ping command returns then we will need to do some more work. For this case, <code>check_output</code> works well:
                             <br><br>
-                            <code>process = subprocess.check_output(command)
-                            <br>
-                            print(process)</code>
+                            <div class="code-block">
+                                <code class="python" style="font-family:monospace;">
+                                    process <span style="color: #66cc66;">=</span> <span style="color: #dc143c;">subprocess</span>.<span style="color: black;">check_output</span><span style="color: black;">&#40;</span>command<span style="color: black;">&#41;</span>
+                                    <br><span style="color: #ff7700;font-weight:bold;">print</span><span style="color: black;">&#40;</span>process<span style="color: black;">&#41;</span>
+                                </code>
+
+                            </div>
                             <br><br>
                             When ran, we get an output like this:
                             <br><br>
-                            <code>b'\r\nPinging 8.8.8.8 with 32 bytes of data:\r\nReply from 8.8.8.8: bytes=32 time=20ms TTL=119\r\n\r\nPing statistics for 8.8.8.8:\r\n    Packets: Sent = 1, Received = 1, Lost = 0 (0% loss),\r\nApproximate round trip times in milli-seconds:\r\n    Minimum = 20ms, Maximum = 20ms, Average = 20ms\r\n'</code>
+                            <div class="code-block">
+                                <code>
+                                    <pre class="javascript" style="font-family:monospace;">b<span style="color: #3366CC;">'<span style="color: #000099; font-weight: bold;">\r</span><span style="color: #000099; font-weight: bold;">\n</span>Pinging 8.8.8.8 with 32 bytes of data:<span style="color: #000099; font-weight: bold;">\r</span><span style="color: #000099; font-weight: bold;">\n</span>Reply from 8.8.8.8: bytes=32 time=20ms TTL=119<span style="color: #000099; font-weight: bold;">\r</span><span style="color: #000099; font-weight: bold;">\n</span><span style="color: #000099; font-weight: bold;">\r</span><span style="color: #000099; font-weight: bold;">\n</span>Ping statistics for 8.8.8.8:<span style="color: #000099; font-weight: bold;">\r</span><span style="color: #000099; font-weight: bold;">\n</span>    Packets: Sent = 1, Received = 1, Lost = 0 (0% loss),<span style="color: #000099; font-weight: bold;">\r</span><span style="color: #000099; font-weight: bold;">\n</span>Approximate round trip times in milli-seconds:<span style="color: #000099; font-weight: bold;">\r</span><span style="color: #000099; font-weight: bold;">\n</span>    Minimum = 20ms, Maximum = 20ms, Average = 20ms<span style="color: #000099; font-weight: bold;">\r</span><span style="color: #000099; font-weight: bold;">\n</span>'</span></pre>
+                                </code>
+
+                            </div>
                             <br><br>
                             Messy. We could parse this output in multiple ways, but we don't really need to. If we receive an output containing "TTL" we already know that the ping was a success so we might as well use that as our 'acid test'.
                             <br><br>
-                            <code>
-                            if "TTL" in str(process):
-                            <br>
-                            &nbsp&nbsp&nbsp&nbspprint("8.8.8.8 is reachable")
-                            <br>
-                            else:
-                            <br>
-                            &nbsp&nbsp&nbsp&nbspprint("8.8.8.8 is not reachable")</code>
+                            <div class="code-block">
+                           
+                             <code class="python" style="font-family:monospace;">
+                                <span style="color: #ff7700;font-weight:bold;">if</span> <span style="color: #483d8b;">&quot;TTL&quot;</span> <span style="color: #ff7700;font-weight:bold;">in</span> <span style="color: #008000;">str</span><span style="color: black;">&#40;</span>process<span style="color: black;">&#41;</span>:
+                                <br><span style="color: #ff7700;font-weight:bold;">print</span><span style="color: black;">&#40;</span><span style="color: #483d8b;">&quot;8.8.8.8 is reachable&quot;</span><span style="color: black;">&#41;</span>
+                                <br><span style="color: #ff7700;font-weight:bold;">else</span>:
+                                <br><span style="color: #ff7700;font-weight:bold;">print</span><span style="color: black;">&#40;</span><span style="color: #483d8b;">&quot;8.8.8.8 is not reachable&quot;</span><span style="color: black;">&#41;</span>
+                               </code>
+
+                            </div>
                             <br>
                             <br>
                             Now, let's wrap it all up together and ping 8.8.8.8 every 10 seconds using a while loop and the time module:
                             <br><br>
-                            <code>
-                            import time
-                            <br>
-                            import subprocess
-                            <br><br>
-                            command = "ping 8.8.8.8 -n 1"
-                            <br><br>
-                            while True:
-                            <br>
-                            &nbsp&nbsp&nbsp&nbsptime.sleep(10)
-                            <br><br>
-                            &nbsp&nbsp&nbsp&nbspprocess = subprocess.check_output(command)
-                            <br>
-                            &nbsp&nbsp&nbsp&nbspif "TTL" in str(process):
-                            <br>
-                            &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspprint("8.8.8.8 is reachable")
-                            <br>
-                            &nbsp&nbsp&nbsp&nbspelse:
-                            <br>
-                            &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspprint("8.8.8.8 is not reachable")</code>
+                            <div class="code-block">
+                              
+                                    <code class="python" style="font-family:monospace;">
+                                        <span style="color: #ff7700;font-weight:bold;">import</span> <span style="color: #dc143c;">time</span>
+                                        <br><span style="color: #ff7700;font-weight:bold;">import</span> <span style="color: #dc143c;">subprocess</span>
+                                        <br>command <span style="color: #66cc66;">=</span> <span style="color: #483d8b;">&quot;ping 8.8.8.8 -n 1&quot;</span>
+                                        <br><span style="color: #ff7700;font-weight:bold;">while</span> <span style="color: #008000;">True</span>:
+                                        <br><span style="color: #dc143c;">time</span>.<span style="color: black;">sleep</span><span style="color: black;">&#40;</span><span style="color: #ff4500;">10</span><span style="color: black;">&#41;</span>
+                                        <br>process <span style="color: #66cc66;">=</span> <span style="color: #dc143c;">subprocess</span>.<span style="color: black;">check_output</span><span style="color: black;">&#40;</span>command<span style="color: black;">&#41;</span>
+                                       <br> <span style="color: #ff7700;font-weight:bold;">if</span> <span style="color: #483d8b;">&quot;TTL&quot;</span> <span style="color: #ff7700;font-weight:bold;">in</span> <span style="color: #008000;">str</span><span style="color: black;">&#40;</span>process<span style="color: black;">&#41;</span>:
+                                        <br><span style="color: #ff7700;font-weight:bold;">print</span><span style="color: black;">&#40;</span><span style="color: #483d8b;">&quot;8.8.8.8 is reachable&quot;</span><span style="color: black;">&#41;</span>
+                                        <br><span style="color: #ff7700;font-weight:bold;">else</span>:
+                                        <br><span style="color: #ff7700;font-weight:bold;">print</span><span style="color: black;">&#40;</span><span style="color: #483d8b;">&quot;8.8.8.8 is not reachable&quot;</span><span style="color: black;">&#41;</span>
+                                </code>
+                            
+                                </div>
                             <br><br>
                             <b>Feel free to tweet me <a href="https://twitter.com/HarryJRobson">@HarryJRobson</a> if you have any questions or need assistance.</b>
                         </p>
